@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>💖 Hải Hân 💖 Bé Quý Đồng Nai & Người Yêu Thương</title>
+    <!-- Font Awesome 6 (miễn phí) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts:  hiện đại & mềm mại -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fef9f0 0%, #ffe6f0 100%);
+            font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        /* hiệu ứng trái tim bay nhẹ */
+        body::before {
+            content: "💖";
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            font-size: 60px;
+            opacity: 0.1;
+            pointer-events: none;
+            animation: floatHeart 8s infinite ease-in-out;
+            z-index: 0;
+        }
+        body::after {
+            content: "💕";
+            position: fixed;
+            top: 15%;
+            left: 3%;
+            font-size: 50px;
+            opacity: 0.1;
+            pointer-events: none;
+            animation: floatHeart 10s infinite reverse;
+            z-index: 0;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.08; }
+            50% { transform: translateY(-25px) rotate(8deg); opacity: 0.2; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.08; }
+        }
+
+        /* container chính */
+        .love-card {
+            max-width: 980px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(0px);
+            border-radius: 3rem;
+            box-shadow: 0 30px 50px -20px rgba(233, 30, 99, 0.3), 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+            border: 1px solid #ffdbeb;
+        }
+
+        .love-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 35px 55px -15px rgba(219, 39, 119, 0.4);
+        }
+
+        /* header gradient đỏ hồng */
+        .card-header {
+            background: linear-gradient(135deg, #b13b6b, #dd5288);
+            padding: 1.5rem 1.5rem 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar-frame {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #FFB7C5, #FF8AAE);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            box-shadow: 0 15px 25px -8px rgba(0,0,0,0.2);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            background: #fff0f5;
+            border-radius: 50%;
+            background-image: url('https://ui-avatars.com/api/?background=dd5288&color=fff&bold=true&size=110&fontsize=0.55&name=Hai+Han&length=2&rounded=true');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .name-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.3rem;
+        }
+
+        .fullname {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(120deg, #FFF3F9, #FFD9E6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #1E88E5;
+            background: linear-gradient(135deg, #0B5E9E, #2196F3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            gap: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            animation: gentlePulse 2s infinite;
+        }
+
+        .verified-badge i, .verified-badge span {
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .badge-system {
+            background: rgba(255,240,245,0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #FFE3F0;
+            font-weight: 500;
+            font-size: 0.7rem;
+        }
+
+        /* card body */
+        .card-body {
+            padding: 2rem 2rem 1.8rem;
+            background: #fffefc;
+        }
+
+        /* Lời cảm ơn đặc biệt */
+        .special-thanks {
+            background: #FFF1F6;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 1px solid #FFC0D0;
+            box-shadow: 0 8px 18px rgba(255, 105, 180, 0.1);
+        }
+
+        .greeting-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #C2185B;
+            margin-bottom: 0.5rem;
+        }
+
+        .heart-icon {
+            font-size: 2rem;
+            color: #E91E63;
+            animation: heartbeat 1.4s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .thankyou-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #2D2F36;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #AD1457;
+            margin-top: 0.5rem;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .info-item {
+            flex: 1;
+            background: #FDF8FA;
+            border-radius: 1.5rem;
+            padding: 0.9rem;
+            text-align: center;
+            border: 1px solid #FFE2ED;
+        }
+
+        .info-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #B83B5E;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-weight: 700;
+            color: #1F1A24;
+        }
+
+        .badge-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1rem 0 1.2rem;
+        }
+
+        .tech-badge {
+            background: #FFEFF4;
+            color: #B3416D;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* thanh skill */
+        .skill-section {
+            margin: 1rem 0;
+        }
+        .skill-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            color: #B3416D;
+        }
+        .progress-bar-bg {
+            background: #FFE2EC;
+            border-radius: 20px;
+            height: 6px;
+            margin-bottom: 0.8rem;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #E91E63, #FF6B9D);
+            width: 0%;
+            height: 100%;
+            border-radius: 20px;
+            transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .quote-block {
+            background: #FFF4F9;
+            border-left: 6px solid #E91E63;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            font-style: italic;
+            margin: 1.2rem 0;
+            font-size: 0.9rem;
+            color: #3E2A34;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.2rem;
+            justify-content: center;
+            border-top: 1px solid #FFE2ED;
+            padding-top: 1.5rem;
+        }
+
+        .social-icon {
+            background: #FFEDF2;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            color: #D85A7A;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            background: #E91E63;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        footer {
+            background: #FFF7FA;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #BB6B8A;
+        }
+
+        @keyframes gentlePulse {
+            0% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.5);}
+            70% { box-shadow: 0 0 0 6px rgba(33, 150, 243, 0);}
+            100% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);}
+        }
+
+        @media (max-width: 600px) {
+            .fullname { font-size: 1.4rem; }
+            .greeting-name { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="love-card">
+    <div class="card-header">
+        <div class="avatar-frame">
+            <div class="avatar"></div>
+        </div>
+        <div class="name-section">
+            <h1 class="fullname">HẢI HÂN </h1>
+            <div class="verified-badge" data-tooltip="Hệ thống xác thực chuyên nghiệp - Verified Love">
+                <i class="fas fa-check-circle"></i>
+                <span>TÍCH XANH HỆ THỐNG</span>
+                <i class="fas fa-heart" style="font-size: 0.7rem;"></i>
+            </div>
+        </div>
+        <div class="badge-system">
+            <i class="fas fa-code"></i> Full-Stack Dev · Trái tim dành cho Bé Quý Đồng Nai 💕
+        </div>
+    </div>
+    
+    <div class="card-body">
+        <!-- PHẦN LỜI CẢM ƠN ĐẶC BIỆT DÀNH CHO LÂM PHÚ QUÝ (BÉ QUÝ ĐỒNG NAI) -->
+        <div class="special-thanks">
+            <div class="heart-icon">💖💕💖</div>
+            <div class="greeting-name">Gửi anh người iu của em – LÂM PHÚ QUÝ</div>
+            <div class="greeting-name" style="font-size: 1.3rem;">✨ Bé Quý Đồng Nai ✨</div>
+            <div class="thankyou-text">
+                Cảm ơn anh vì đã luôn ở bên cạnh em những lúc vui buồn. <br>
+                Cảm ơn anh vì sự quan tâm, yêu thương và những điều nhỏ bé nhưng khiến em hạnh phúc mỗi ngày. <br>
+                Có anh trong cuộc sống là điều mà em luôn trân trọng nhất.<br><br>
+                Dù đôi lúc mình có giận hờn hay khó khăn, em vẫn cảm thấy may mắn vì được đồng hành cùng anh.<br>
+                Anh không chỉ là người em yêu mà còn là người cho em cảm giác bình yên và được che chở.<br><br>
+                <strong>Mong rằng mình sẽ cùng nhau đi thật lâu, cùng vượt qua mọi chuyện và giữ mãi tình cảm đẹp này nha anh ❤️</strong>
+            </div>
+            <div class="signature">
+                Yêu anh nhiều lắm – BÉ QUÝ ĐỒNG NAI 💕
+            </div>
+            <div style="margin-top: 12px;">
+                <i class="fas fa-infinity" style="color:#E91E63;"></i> <span style="font-weight:500;">Hẹn hò cùng anh, mỗi ngày đều là Valentine</span>
+            </div>
+        </div>
+
+        <!-- Thông tin về cặp đôi -->
+        <div class="info-grid">
+            <div class="info-item">
+                <i class="fas fa-calendar-alt" style="color:#E91E63;"></i>
+                <div class="info-label">KỶ NIỆM YÊU</div>
+                <div class="info-value">💞 Mãi bên nhau 💞</div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt" style="color:#E91E63;"></i>
+                <div class="info-label">QUÊ HƯƠNG ANH</div>
+                <div class="info-value">🌾 Đồng Nai - Bé Quý 🌾</div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-heartbeat" style="color:#E91E63;"></i>
+                <div class="info-label">DẤU ẤN</div>
+                <div class="info-value">Tình yêu đẹp nhất</div>
+            </div>
+        </div>
+
+        <!-- Stack kỹ năng lãng mạn + IT chuyên nghiệp -->
+        <div class="badge-stack">
+            <span class="tech-badge"><i class="fab fa-html5"></i> HTML tình yêu</span>
+            <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS ngọt ngào</span>
+            <span class="tech-badge"><i class="fab fa-js"></i> JavaScript trái tim</span>
+            <span class="tech-badge"><i class="fas fa-heart"></i> 4.0 Emotion</span>
+            <span class="tech-badge"><i class="fas fa-hand-holding-heart"></i> Chăm sóc</span>
+        </div>
+
+        <!-- Thanh kỹ năng của tình yêu và sự nghiệp -->
+        <div class="skill-section">
+            <div class="skill-title"><span>💖 Yêu thương anh dành cho em</span> <span id="lovePercent">100%</span></div>
+            <div class="progress-bar-bg"><div class="progress-fill" id="loveFill" style="width:0%"></div></div>
+            <div class="skill-title"><span>💕 Sự bền vững & kiên nhẫn</span> <span id="patientVal">99%</span></div>
+            <div class="progress-bar-bg"><div class="progress-fill" id="patientFill" style="width:0%"></div></div>
+            <div class="skill-title"><span>🌹 Ngọt ngào & lãng mạn</span> <span id="sweetVal">98%</span></div>
+            <div class="progress-bar-bg"><div class="progress-fill" id="sweetFill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quote-block">
+            <i class="fas fa-quote-left" style="margin-right: 6px; color:#E91E63;"></i> 
+            “Anh là source code hạnh phúc, em là compiler của yêu thương — chạy mãi không lỗi.” 
+            <i class="fas fa-heart" style="margin-left: 6px; color:#E91E63;"></i>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-icon" id="loveLetterBtn" data-tooltip="Gửi thư yêu thương"><i class="fas fa-envelope-open-text"></i></a>
+            <a href="#" class="social-icon" id="heartBeatBtn" data-tooltip="Nhịp đập trái tim"><i class="fas fa-heartbeat"></i></a>
+            <a href="#" class="social-icon" id="flowerBtn" data-tooltip="Hoa hồng tặng anh"><i class="fas fa-seedling"></i></a>
+            <a href="#" class="social-icon" id="foreverBtn" data-tooltip="Mãi bên nhau"><i class="fas fa-infinity"></i></a>
+        </div>
+    </div>
+    <footer>
+        <i class="fas fa-certificate" style="margin-right: 4px;"></i> Hệ thống tích xanh xác thực · Nguyên Hoàng Hải Hân ✨ Yêu LÂM PHÚ QUÝ (Bé Quý Đồng Nai) ✨
+    </footer>
+</div>
+
+<script>
+    (function() {
+        // Animation thanh kỹ năng lãng mạn
+        const loveFill = document.getElementById('loveFill');
+        const patientFill = document.getElementById('patientFill');
+        const sweetFill = document.getElementById('sweetFill');
+        
+        let animated = false;
+        function animateRomanceSkills() {
+            if(animated) return;
+            animated = true;
+            loveFill.style.width = '100%';
+            patientFill.style.width = '99%';
+            sweetFill.style.width = '98%';
+            // cập nhật text (đã có sẵn nhưng set lại cho chắc)
+            document.getElementById('lovePercent').innerText = '100%';
+            document.getElementById('patientVal').innerText = '99%';
+            document.getElementById('sweetVal').innerText = '98%';
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateRomanceSkills();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        const cardBody = document.querySelector('.card-body');
+        if(cardBody) observer.observe(cardBody);
+        window.addEventListener('load', () => setTimeout(() => { if(!animated) animateRomanceSkills(); }, 400));
+        
+        // Tích xanh hiệu ứng click thông báo tình yêu
+        const verifiedBadge = document.querySelector('.verified-badge');
+        if(verifiedBadge) {
+            verifiedBadge.addEventListener('click', function(e) {
+                e.preventDefault();
+                showToast('✅ Hệ thống xác thực trái tim · Dấu tích xanh chính thức · Hải Hân ❤️ Bé Quý Đồng Nai', '#0F172A', '#E91E63');
+            });
+        }
+        
+        function showToast(msg, bg = '#2C2E3A', borderColor = '#E91E63') {
+            const toast = document.createElement('div');
+            toast.innerText = msg;
+            toast.style.cssText = `
+                position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+                background: ${bg}; color: white; padding: 12px 24px; border-radius: 60px;
+                font-weight: 500; font-size: 0.85rem; z-index: 1000;
+                border-left: 6px solid ${borderColor}; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                backdrop-filter: blur(6px); font-family: 'Inter', sans-serif; white-space: nowrap;
+            `;
+            if(window.innerWidth < 500) toast.style.whiteSpace = 'normal';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = '0.3s';
+                setTimeout(() => toast.remove(), 400);
+            }, 2800);
+        }
+        
+        // Các nút tương tác lãng mạn dành tặng LÂM PHÚ QUÝ
+        const loveLetter = document.getElementById('loveLetterBtn');
+        const heartBeat = document.getElementById('heartBeatBtn');
+        const flower = document.getElementById('flowerBtn');
+        const forever = document.getElementById('foreverBtn');
+        
+        if(loveLetter) {
+            loveLetter.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('💌 Gửi Bé Quý Đồng Nai: Em yêu anh nhiều lắm! Cảm ơn vì tất cả những ngọt ngào anh dành cho em. 💕', '#8B2C4D', '#FFB6C1');
+            });
+        }
+        if(heartBeat) {
+            heartBeat.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('💓 Nhịp tim của em chỉ đập nhanh khi nghĩ về anh Lâm Phú Quý. Anh là điều kỳ diệu nhất! 💓', '#A63E60', '#FF8DA1');
+            });
+        }
+        if(flower) {
+            flower.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('🌹 Mỗi bông hồng đều tượng trưng cho nụ cười của anh. Tặng anh ngàn đoá yêu thương từ trái tim em. 🌹', '#9F3E5C', '#F4A261');
+            });
+        }
+        if(forever) {
+            forever.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('♾️ Hứa mãi bên nhau, cùng vượt qua mọi giông bão. Em yêu anh LÂM PHÚ QUÝ – Bé Quý Đồng Nai dễ thương nhất thế gian! ♾️', '#1C2F4A', '#FF6F91');
+            });
+        }
+        
+        // Thêm hiệu ứng trái tim bay khi di chuột vào card-body (lãng mạn)
+        const loveCard = document.querySelector('.love-card');
+        if(loveCard) {
+            loveCard.addEventListener('mouseenter', () => {
+                const heartEmoji = document.createElement('div');
+                heartEmoji.innerHTML = '💖';
+                heartEmoji.style.position = 'fixed';
+                heartEmoji.style.fontSize = '28px';
+                heartEmoji.style.left = Math.random() * 80 + 10 + '%';
+                heartEmoji.style.bottom = '10px';
+                heartEmoji.style.opacity = '0.7';
+                heartEmoji.style.pointerEvents = 'none';
+                heartEmoji.style.zIndex = '999';
+                heartEmoji.style.transition = 'transform 1s ease, opacity 1s';
+                document.body.appendChild(heartEmoji);
+                setTimeout(() => {
+                    heartEmoji.style.transform = 'translateY(-120px) rotate(10deg)';
+                    heartEmoji.style.opacity = '0';
+                    setTimeout(() => heartEmoji.remove(), 1000);
+                }, 30);
+            });
+        }
+        
+        // thêm thông báo chào mừng dành riêng cho "Bé Quý Đồng Nai" + thương hiệu dev
+        setTimeout(() => {
+            console.log("%c💕 NGUYÊN HOÀNG HẢI HÂN 💕 | Dấu tích xanh tình yêu | Đang hẹn hò cùng LÂM PHÚ QUÝ (Bé Quý Đồng Nai)", "color:#E91E63; font-size:14px; font-weight:bold; background:#FFF0F5; padding:4px 12px; border-radius:30px");
+            console.log("%c✨ Cảm ơn anh vì đã là người yêu tuyệt vời nhất. Yêu anh rất nhiều! 💖", "color:#C2185B; font-size:12px");
+        }, 100);
+        
+        // Tạo dòng chúc mừng ẩn nhưng đầy cảm xúc khi người dùng click vào avatar
+        const avatarDiv = document.querySelector('.avatar-frame');
+        if(avatarDiv) {
+            avatarDiv.addEventListener('click', () => {
+                showToast('💕 Anh Lâm Phú Quý ơi, em yêu anh nhiều lắm! Nhớ cùng nhau đi thật lâu nhé ❤️ - Bé Quý Đồng Nai 💕', '#AA2E5E', '#FFB7C5');
+            });
+        }
+        
+        // cập nhật footer năm động
+        const footer = document.querySelector('footer');
+        if(footer) {
+            const year = new Date().getFullYear();
+            footer.innerHTML = `<i class="fas fa-certificate" style="margin-right: 4px;"></i> Hệ thống tích xanh xác thực · Nguyên Hoàng Hải Hân ✨ Yêu LÂM PHÚ QUÝ (Bé Quý Đồng Nai) ✨ · ${year} 💖`;
+        }
+        
+        // Thêm tooltip thủ công cho data-tooltip (tận dụng CSS có sẵn)
+        const tooltips = document.querySelectorAll('[data-tooltip]');
+        tooltips.forEach(el => {
+            if(!el.hasAttribute('data-tooltip')) return;
+        });
+        
+        // Tạo hiệu ứng mưa tim nhẹ mỗi khi load (không gây rối)
+        function createFloatingHearts() {
+            for(let i=0;i<6;i++) {
+                let heartSpan = document.createElement('div');
+                heartSpan.innerHTML = '💞';
+                heartSpan.style.position = 'fixed';
+                heartSpan.style.bottom = '0px';
+                heartSpan.style.left = Math.random() * 100 + '%';
+                heartSpan.style.fontSize = '18px';
+                heartSpan.style.opacity = '0.5';
+                heartSpan.style.pointerEvents = 'none';
+                heartSpan.style.zIndex = '999';
+                heartSpan.style.transition = 'all 3s ease-in-out';
+                document.body.appendChild(heartSpan);
+                setTimeout(() => {
+                    heartSpan.style.transform = `translateY(-${Math.random() * 300 + 100}px) rotate(10deg)`;
+                    heartSpan.style.opacity = '0';
+                    setTimeout(() => heartSpan.remove(), 3000);
+                }, i*200);
+            }
+        }
+        window.addEventListener('load', () => setTimeout(createFloatingHearts, 600));
+    })();
+</script>
+</body>
+</html>
